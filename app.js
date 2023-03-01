@@ -12,6 +12,7 @@ const ejs = require("ejs");
 // Database libraries
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
+const encrypt = require("mongoose-encryption");
 
 // Database Setup
 const database = 'userDB';
@@ -31,6 +32,10 @@ const userSchema = new mongoose.Schema({
     email: String,
     password: String
 });
+
+const secret = "Thisisourlittlesecret.";
+userSchema.plugin(encrypt, { secret: secret, encryptedFields: ["password"] } );
+
 const User = mongoose.model("User", userSchema);
 
 const app = express();
