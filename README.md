@@ -1,2 +1,12 @@
 # Secret-Site
  
+Went through the 6 level of Security + using environment variables
+
+View each level of security in the git log
+
+Level 1 - Username and Password Only
+Level 2 - Encryption
+Level 3 - Hashing with md5
+Level 4 - Hashing and Salting with bcrypt
+Level 5 - Cookies and Sessions
+Level 6 - Google OAuth 2.0 Authentication
